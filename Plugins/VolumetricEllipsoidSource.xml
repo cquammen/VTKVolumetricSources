@@ -1,0 +1,35 @@
+<ServerManagerConfiguration>
+  <ProxyGroup name="sources">
+    <SourceProxy name="VolumetricEllipsoidSource" class="vtkVolumetricEllipsoidSource" label="Volumetric Ellipsoid Source">
+      <Documentation
+         long_help=""
+         short_help="">
+      </Documentation>
+
+      <DoubleVectorProperty
+         name="Radius"
+         command="SetRadius"
+         number_of_elements="3"
+         default_values="1.0 1.0 1.0">
+        <DoubleRangeDomain name="range"/>
+      </DoubleVectorProperty>
+      
+      <IntVectorProperty
+         name="ThetaResolution"
+         command="SetThetaResolution"
+         number_of_elements="1"
+         default_values="16">
+        <IntRangeDomain name="range" min="2"/>
+      </IntVectorProperty>
+
+      <IntVectorProperty
+         name="PhiResolution"
+         command="SetPhiResolution"
+         number_of_elements="1"
+         default_values="16">
+        <IntRangeDomain name="range" min="2"/>
+      </IntVectorProperty>
+
+    </SourceProxy>
+  </ProxyGroup>
+</ServerManagerConfiguration>

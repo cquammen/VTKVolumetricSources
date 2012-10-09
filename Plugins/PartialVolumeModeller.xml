@@ -1,0 +1,49 @@
+<ServerManagerConfiguration>
+  <ProxyGroup name="filters">
+    <SourceProxy name="PartialVolumeModeller"
+                 class="vtkPartialVolumeModeller"
+                 label="Partial Volume Modeller">
+      <Documentation
+         long_help=""
+         short_help="">
+      </Documentation>
+
+      <InputProperty
+         name="Input"
+         command="SetInputConnection">
+        <ProxyGroupDomain name="groups">
+          <Group name="sources"/>
+          <Group name="filters"/>
+        </ProxyGroupDomain>
+        <DataTypeDomain name="input_type">
+          <DataType value="vtkUnstructuredGrid"/>
+        </DataTypeDomain>
+      </InputProperty>
+
+      <IntVectorProperty
+         name="SampleDimensions"
+         command="SetSampleDimensions"
+         number_of_elements="3"
+         default_values="50 50 50">
+        <IntRangeDomain name="range"/>
+      </IntVectorProperty>
+
+      <DoubleVectorProperty
+         name="MaximumDistance"
+         command="SetMaximumDistance"
+         number_of_elements="1"
+         default_values="1.0">
+        <DoubleRangeDomain name="range" min="0.0" max="1.0"/>
+      </DoubleVectorProperty>
+
+      <DoubleVectorProperty
+         name="ModelBounds"
+         command="SetModelBounds"
+         number_of_elements="6"
+         default_values="0.0 1.0 0.0 1.0 0.0 1.0">
+        <DoubleRangeDomain name="range"/>
+      </DoubleVectorProperty>
+
+    </SourceProxy>
+  </ProxyGroup>
+</ServerManagerConfiguration>

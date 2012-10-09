@@ -1,0 +1,53 @@
+<ServerManagerConfiguration>
+  <ProxyGroup name="sources">
+    <SourceProxy name="VolumetricHollowCylinderSource"
+                 class="vtkVolumetricHollowCylinderSource"
+                 label="Volumetric Hollow Cylinder Source">
+      <Documentation
+         long_help=""
+         short_help="">
+      </Documentation>
+
+      <DoubleVectorProperty
+         name="Height"
+         command="SetHeight"
+         number_of_elements="1"
+         default_values="1.0">
+        <DoubleRangeDomain name="range"/>
+      </DoubleVectorProperty>
+
+      <DoubleVectorProperty
+         name="InnerRadius"
+         command="SetInnerRadius"
+         number_of_elements="1"
+         default_values="0.5">
+        <DoubleRangeDomain name="range" min="0.0"/>
+      </DoubleVectorProperty>
+
+      <DoubleVectorProperty
+         name="OuterRadius"
+         command="SetOuterRadius"
+         number_of_elements="1"
+         default_values="1.0">
+        <DoubleRangeDomain name="range" min="0.0"/>
+      </DoubleVectorProperty>
+
+      <DoubleVectorProperty
+         name="Center"
+         command="SetCenter"
+         number_of_elements="3"
+         default_values="0.0 0.0 0.0">
+        <DoubleRangeDomain name="range"/>
+      </DoubleVectorProperty>
+      
+      <IntVectorProperty
+         name="Resolution"
+         command="SetResolution"
+         number_of_elements="1"
+         default_values="16">
+        <IntRangeDomain name="range" min="3"/>
+      </IntVectorProperty>
+
+    </SourceProxy>
+  </ProxyGroup>
+</ServerManagerConfiguration>
